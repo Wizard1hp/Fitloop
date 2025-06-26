@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login - Fitloop</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#DAA520',secondary:'#FFE4E1'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Poppins', sans-serif;
+color: #333333;
+min-height: 100vh;
+background-color: #fff;
+}
+.form-input {
+transition: all 0.3s ease;
+}
+.form-input:focus {
+border-color: #DAA520;
+box-shadow: 0 0 0 3px rgba(218, 165, 32, 0.1);
+}
+</style>
+</head>
+<body class="flex flex-col">
+<nav class="bg-white shadow-sm py-4">
+<div class="container mx-auto px-6">
+<a href="index.html" class="text-3xl font-['Pacifico'] text-primary">Fitloop</a>
+</div>
+</nav>
+<main class="flex-grow flex items-center justify-center py-12 px-4">
+<div class="container mx-auto flex flex-col lg:flex-row items-center gap-12 max-w-6xl">
+<!-- Left Side - Image and Text -->
+<div class="w-full lg:w-1/2 text-center lg:text-left">
+<div class="mb-8">
+<h1 class="text-4xl font-bold mb-4">Welcome Back</h1>
+<p class="text-gray-600 text-lg">Sign in to access your personalized tailoring experience and manage your orders.</p>
+</div>
+<div class="relative h-[400px] rounded-lg overflow-hidden shadow-xl">
+<div style="background-image: url('https://readdy.ai/api/search-image?query=elegant%20fashion%20boutique%20interior%20with%20soft%20pink%20and%20gold%20accents%2C%20mannequins%20displaying%20beautiful%20dresses%2C%20luxurious%20fitting%20room%20area%2C%20warm%20lighting%2C%20high-end%20retail%20space%20with%20modern%20minimalist%20design&width=800&height=800&seq=123460&orientation=squarish'); background-size: cover; background-position: center;" class="absolute inset-0"></div>
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+</div>
+<!-- Right Side - Login Form -->
+<div class="w-full lg:w-1/2 bg-white p-8 rounded-lg shadow-lg">
+<form id="loginForm" class="space-y-6">
+<!-- Email -->
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+<div class="relative">
+<i class="ri-mail-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+<input type="email" name="email" class="form-input w-full pl-10 pr-4 py-3 border border-gray-300 rounded focus:outline-none" placeholder="Enter your email" required>
+</div>
+</div>
+<!-- Password -->
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-2">Password</label>
+<div class="relative">
+<i class="ri-lock-line absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"></i>
+<input type="password" name="password" id="password" class="form-input w-full pl-10 pr-10 py-3 border border-gray-300 rounded focus:outline-none" placeholder="Enter your password" required>
+<button type="button" id="togglePassword" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600">
+<i class="ri-eye-line"></i>
+</button>
+</div>
+</div>
+<!-- Remember Me & Forgot Password -->
+<div class="flex items-center justify-between">
+<label class="flex items-center">
+<input type="checkbox" name="remember" class="h-4 w-4 text-primary border-gray-300 rounded">
+<span class="ml-2 text-sm text-gray-600">Remember me</span>
+</label>
+<a href="#" class="text-sm text-primary hover:underline">Forgot password?</a>
+</div>
+<!-- Submit Button -->
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button whitespace-nowrap hover:bg-opacity-90 transition flex items-center justify-center">
+<span>Sign In</span>
+</button>
+<!-- Register Link -->
+<p class="text-center text-gray-600">
+Don't have an account?
+<a href="register.html" class="text-primary hover:underline">Create one</a>
+</p>
+<!-- Social Login -->
+<div class="relative">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-gray-300"></div>
+</div>
+<div class="relative flex justify-center text-sm">
+<span class="px-2 bg-white text-gray-500">Or continue with</span>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<button type="button" class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 transition">
+<i class="ri-google-fill text-[#DB4437]"></i>
+</button>
+<button type="button" class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 transition">
+<i class="ri-facebook-fill text-[#4267B2]"></i>
+</button>
+<button type="button" class="flex items-center justify-center px-4 py-2 border border-gray-300 rounded hover:bg-gray-50 transition">
+<i class="ri-apple-fill"></i>
+</button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<script id="loginScript">
+document.addEventListener('DOMContentLoaded', function() {
+const form = document.getElementById('loginForm');
+const passwordInput = document.getElementById('password');
+const togglePassword = document.getElementById('togglePassword');
+togglePassword.addEventListener('click', function() {
+const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+passwordInput.setAttribute('type', type);
+togglePassword.innerHTML = type === 'password' ? 
+'<i class="ri-eye-line"></i>' : 
+'<i class="ri-eye-off-line"></i>';
+});
+form.addEventListener('submit', function(e) {
+e.preventDefault();
+const successDiv = document.createElement('div');
+successDiv.className = 'fixed top-4 right-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded';
+successDiv.innerHTML = `
+<div class="flex items-center">
+<i class="ri-checkbox-circle-line mr-2"></i>
+<span>Login successful! Redirecting...</span>
+</div>
+`;
+document.body.appendChild(successDiv);
+setTimeout(() => {
+successDiv.remove();
+window.location.href = 'index.html';
+}, 2000);
+});
+});
+</script>
+</body>
+</html>
